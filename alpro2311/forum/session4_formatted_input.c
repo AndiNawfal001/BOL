@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+//test
 int main() {
     int lulus = 0;
     int gagal = 0;
