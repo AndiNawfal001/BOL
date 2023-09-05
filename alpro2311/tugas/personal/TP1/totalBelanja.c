@@ -21,9 +21,9 @@ int main() {
         // Diskon berdasarkan total belanja
         if (totalBelanja < 200000) {
             diskonTotal = 0.0;
-        } else if (totalBelanja <= 500000) { 
+        } else if (totalBelanja < 500000) { 
             diskonTotal = 0.10;
-        } else if (totalBelanja <= 1000000) { 
+        } else if (totalBelanja < 1000000) { 
             diskonTotal = 0.20;
         } else {
             diskonTotal = 0.30;
