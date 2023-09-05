@@ -51,14 +51,13 @@ int main() {
         while(belanjaLagi != 'y' && belanjaLagi != 'n' && belanjaLagi != 'Y' && belanjaLagi != 'N'){
             printf("\033[0;31mMohon input (Y/N)\nY = belanja lagi\nN = tidak belanja lagi\033[0m\n\n");
             printf("\033[0;34mApakah anda ingin belanja lagi? (Y/N): \033[0m"); 
-            scanf(" %c", &belanjaLagi); 
-            belanjaLagi = tolower(belanjaLagi);
+            scanf(" %c", &belanjaLagi);  
+            printf("\n"); 
         } 
         
         // Jika sesi sudah 4 maka sesi di reset ke sesi 1
-        if(belanjaKe == 4){
-            belanjaKe = 0;
-        }
+        belanjaKe = (belanjaKe == 4) ? 0 : belanjaKe;
+        
     } while (belanjaLagi == 'y');  
  
     printf("\n");
