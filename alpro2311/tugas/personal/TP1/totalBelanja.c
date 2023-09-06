@@ -1,5 +1,37 @@
 #include <stdio.h>
-#include <ctype.h>
+#include <stdlib.h>
+#include <string.h> 
+
+// Fungsi untuk mengubah integer menjadi format dengan titik
+char* formatInteger(int number) {
+    char buffer[20];  // Menyimpan string hasil format
+    char formatted[20];  // Menyimpan string dengan titik
+
+    // Mengkonversi integer ke string
+    sprintf(buffer, "%d", number);
+
+    int len = strlen(buffer);
+    int commaCount = (len - 1) / 3;  // Menghitung berapa titik (,) yang diperlukan
+    int formattedLen = len + commaCount;  // Panjang string yang sudah diformat
+
+    int idx = 0;  // Indeks untuk string `formatted`
+
+    for (int i = 0; i < len; i++) {
+        formatted[idx++] = buffer[i];
+
+        if ((len - i - 1) % 3 == 0 && i < len - 1) {
+            formatted[idx++] = '.';
+        }
+    }
+
+    formatted[idx] = '\0';  // Menambahkan null-terminator
+
+    // Mengalokasikan memori baru untuk string hasil format
+    char* result = (char*)malloc(formattedLen + 1);
+    strcpy(result, formatted);
+
+    return result;
+}
 
 int main() {
     char belanjaLagi; 
@@ -39,8 +71,8 @@ int main() {
         jumlahBelanja = totalBelanja - jumlahDiskon; 
 
         printf("Anda mendapatkan potongan diskon : %d persen \n", semuaDiskon);
-        printf("Potongan harga yang diperoleh : Rp. %d\n", jumlahDiskon);
-        printf("Jumlah harga yang harus di bayar : Rp. %d\n", jumlahBelanja);
+        printf("Potongan harga yang diperoleh : Rp. %s\n", formatInteger(jumlahDiskon));
+        printf("Jumlah harga yang harus di bayar : Rp. %s\n", formatInteger(jumlahBelanja));
         printf("Sudah berapa kali belanja : %d\n\n", belanjaKe); 
      
         printf("\033[0;34mApakah anda ingin belanja lagi? (Y/N): \033[0m");
