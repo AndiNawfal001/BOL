@@ -70,7 +70,7 @@ int main() {
         // Hitung jumlah belanja yang harus dibayar setelah didiskon
         jumlahBelanja = totalBelanja - jumlahDiskon; 
 
-        printf("Anda mendapatkan potongan diskon : %d persen \n", semuaDiskon);
+        printf("Anda mendapatkan potongan diskon : %d%% \n", semuaDiskon);
         printf("Potongan harga yang diperoleh : Rp. %s\n", formatInteger(jumlahDiskon));
         printf("Jumlah harga yang harus di bayar : Rp. %s\n", formatInteger(jumlahBelanja));
         printf("Sudah berapa kali belanja : %d\n\n", belanjaKe); 
