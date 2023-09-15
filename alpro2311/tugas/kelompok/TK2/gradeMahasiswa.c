@@ -130,9 +130,24 @@ int main() {
 
     // Menghitung rata-rata nilai semua mahasiswa
     rataRata /= 10;
-
+    
+    // Menentukan grade untuk rata-rata semua mahasiswa
+    char gradeRataRata;
+    if (rataRata <= 55) {
+        gradeRataRata = 'E';
+    } else if (rataRata <= 65) {
+        gradeRataRata = 'D';
+    } else if (rataRata <= 75) {
+        gradeRataRata = 'C';
+    } else if (rataRata <= 85) {
+        gradeRataRata = 'B';
+    } else {
+        gradeRataRata = 'A';
+    }
+    
     // Menampilkan rata-rata nilai semua mahasiswa
     printf("\nRata-rata nilai semua mahasiswa: %.2f\n", rataRata);
+    printf("Rata-rata Grade semua mahasiswa: %c\n\n", gradeRataRata);
 
     // Menampilkan jumlah mahasiswa yang lulus dan tidak lulus
     printf("\033[0;36mJumlah mahasiswa yang Lulus: %d\033[0m\n", jumlahLulus);
